@@ -1,0 +1,23 @@
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: aaaa@gmail.com
+    password: aaaaa
+    port: 465
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true     # il faut utiliser cette url pour reduire la securité appliqué par google 
+            required: true   # https://myaccount.google.com/security?pli=1#connectedapps
+          socketFactory:     # click Allow less secure app to YES
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallBack: false  
+    protocol: smtp
+    test-connection: false  
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates
