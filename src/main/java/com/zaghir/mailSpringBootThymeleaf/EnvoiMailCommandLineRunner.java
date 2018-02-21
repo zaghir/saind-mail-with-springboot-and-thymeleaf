@@ -32,9 +32,9 @@ public class EnvoiMailCommandLineRunner  implements ApplicationRunner  {
         mail.setSubject("Sending Email with Thymeleaf HTML Template Example");
 
         Map model = new HashMap();
-        model.put("name", "Memorynotfound.com");
-        model.put("location", "Belgium");
-        model.put("signature", "https://memorynotfound.com");
+        model.put("name", "Zaghir");
+        model.put("location", "FREANCE");
+        model.put("signature", "https://toto.com");
         mail.setModel(model);
 
         emailService.sendSimpleMessage(mail);

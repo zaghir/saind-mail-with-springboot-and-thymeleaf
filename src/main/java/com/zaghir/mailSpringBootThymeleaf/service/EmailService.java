@@ -29,11 +29,13 @@ public class EmailService {
 
     public void sendSimpleMessage(Mail mail) throws MessagingException, IOException {
         MimeMessage message = emailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message,
-                MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED,
+        MimeMessageHelper helper = new MimeMessageHelper(
+        		message,
+        		MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED,
                 StandardCharsets.UTF_8.name());
 
         helper.addAttachment("logo.png", new ClassPathResource("/img/logo.png"));
+        helper.addAttachment("Toto-TEST.txt", new ClassPathResource("/img/Toto-TEST.txt"));
 
         Context context = new Context();
         context.setVariables(mail.getModel());
